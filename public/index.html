@@ -1,0 +1,217 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <title>FinNews Simple | Financial News Made Easy</title>
+  <meta
+    name="description"
+    content="Simple financial news for students and curious learners. Explore Indian and global finance news with easy explanations, glossary terms, multilingual summaries, and a built-in chatbot."
+  >
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link
+    href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;500;700&family=Source+Sans+3:wght@400;500;600;700&display=swap"
+    rel="stylesheet"
+  >
+  <link rel="stylesheet" href="/styles.css">
+</head>
+<body>
+  <div class="page-shell">
+    <header class="hero">
+      <nav class="topbar">
+        <div class="brand-block">
+          <span class="brand-chip">Finance Awareness Platform</span>
+          <a href="/" class="brand-name">FinNews Simple</a>
+        </div>
+        <div class="topbar-actions">
+          <button class="ghost-btn" id="themeToggle" type="button" aria-label="Toggle theme">
+            <span id="themeLabel">Dark Mode</span>
+          </button>
+          <a class="primary-btn" href="#newsHub">Explore News</a>
+        </div>
+      </nav>
+
+      <section class="hero-grid">
+        <div class="hero-copy">
+          <p class="eyebrow">Indian + Global Financial News</p>
+          <h1>Understand money news like a smart student, not like a confused expert.</h1>
+          <p class="hero-text">
+            Learn real financial facts from trusted sources with short childlike explanations,
+            finance word meanings, multilingual summaries, and a chatbot that helps you
+            understand what the news is really saying.
+          </p>
+          <div class="hero-actions">
+            <a class="primary-btn" href="#newsHub">Start Reading</a>
+            <a class="secondary-btn" href="#assistantPanel">Ask the Helper Bot</a>
+          </div>
+          <div class="hero-metrics">
+            <article>
+              <strong>India + World</strong>
+              <span>Two-track coverage for local and global awareness</span>
+            </article>
+            <article>
+              <strong>3 language modes</strong>
+              <span>English, Hindi-English, Marathi-English</span>
+            </article>
+            <article>
+              <strong>Simple glossary</strong>
+              <span>Hard words explained in easy one-line meanings</span>
+            </article>
+          </div>
+        </div>
+
+        <aside class="hero-panel">
+          <div class="panel-card spotlight">
+            <p class="panel-label">What this platform does</p>
+            <ul>
+              <li>Shows trusted-source factual news</li>
+              <li>Explains the big idea in very simple words</li>
+              <li>Supports sector and company interest search</li>
+              <li>Answers "what does this mean?" instantly</li>
+            </ul>
+          </div>
+          <div class="panel-card featured-glossary">
+            <p class="panel-label">Production Ready Shape</p>
+            <h3>API-backed + Deployable</h3>
+            <p>The frontend now reads from server APIs, so live sources and AI can be plugged in safely.</p>
+          </div>
+        </aside>
+      </section>
+    </header>
+
+    <main>
+      <section class="section overview-section">
+        <div class="section-heading">
+          <p class="eyebrow">Built For Learners</p>
+          <h2>Financial awareness without fear</h2>
+          <p>
+            This product is designed for students, early professionals, and curious readers
+            who want short, factual, easy-to-understand finance news with practical meaning.
+          </p>
+        </div>
+
+        <div class="overview-grid">
+          <article class="info-card">
+            <h3>Trusted Source Focus</h3>
+            <p>
+              Every news card highlights the source and trust type so readers know where the factual update came from.
+            </p>
+          </article>
+          <article class="info-card">
+            <h3>Simple Story Format</h3>
+            <p>
+              Each item is rewritten in short, direct language to help readers who struggle with complex terms.
+            </p>
+          </article>
+          <article class="info-card">
+            <h3>Sector-Based Discovery</h3>
+            <p>
+              Search by company, sector, or keyword like banking, IT, energy, automobile, or inflation.
+            </p>
+          </article>
+          <article class="info-card">
+            <h3>Chat Help Layer</h3>
+            <p>
+              The helper bot can use local knowledge now and can switch to OpenAI in production using environment variables.
+            </p>
+          </article>
+        </div>
+      </section>
+
+      <section class="section hub-section" id="newsHub">
+        <div class="section-heading compact">
+          <div>
+            <p class="eyebrow">News Hub</p>
+            <h2>Search, filter, and understand important news</h2>
+          </div>
+          <p>
+            Read short factual summaries, easy explanations, why the news matters, and finance words used in the report.
+          </p>
+        </div>
+
+        <div class="control-panel">
+          <label class="control search-box">
+            <span>Search news, company, or sector</span>
+            <input id="searchInput" type="search" placeholder="Search RBI, Infosys, oil, banking, GDP...">
+          </label>
+
+          <label class="control">
+            <span>Region</span>
+            <select id="regionFilter">
+              <option value="all">All</option>
+              <option value="india">India</option>
+              <option value="global">Global</option>
+            </select>
+          </label>
+
+          <label class="control">
+            <span>Language Style</span>
+            <select id="languageFilter">
+              <option value="english">English Only</option>
+              <option value="hinglish">Hindi + English</option>
+              <option value="marathi">Marathi + English</option>
+            </select>
+          </label>
+
+          <label class="control">
+            <span>Sector</span>
+            <select id="sectorFilter">
+              <option value="all">All sectors</option>
+            </select>
+          </label>
+        </div>
+
+        <div class="news-layout">
+          <section class="news-column">
+            <div class="mini-heading">
+              <h3>Featured News</h3>
+              <p id="resultsMeta">Loading finance stories...</p>
+            </div>
+            <div class="news-grid" id="newsGrid"></div>
+          </section>
+
+          <aside class="sidebar">
+            <div class="sidebar-card glossary-card">
+              <div class="mini-heading">
+                <h3>Finance Words</h3>
+                <p>Quick meanings for difficult terms.</p>
+              </div>
+              <div id="glossaryList" class="glossary-list"></div>
+            </div>
+
+            <div class="sidebar-card">
+              <div class="mini-heading">
+                <h3>Trusted Live Sources</h3>
+                <p>Official source connectivity and fallback health.</p>
+              </div>
+              <div class="source-status-list" id="sourceStatusList">
+                <div class="assistant-status">Checking source feeds...</div>
+              </div>
+            </div>
+
+            <div class="sidebar-card assistant-card" id="assistantPanel">
+              <div class="mini-heading">
+                <h3>News Helper Bot</h3>
+                <p>Ask about a news item, company, or financial word.</p>
+              </div>
+              <div class="assistant-status" id="assistantStatus">Assistant mode: loading...</div>
+              <div class="chat-window" id="chatWindow">
+                <div class="bot-message">
+                  Ask me things like "What is repo rate?" or "Explain RBI news in simple Hindi-English."
+                </div>
+              </div>
+              <form id="chatForm" class="chat-form">
+                <input id="chatInput" type="text" placeholder="Type your finance question...">
+                <button class="primary-btn" type="submit">Ask</button>
+              </form>
+            </div>
+          </aside>
+        </div>
+      </section>
+    </main>
+  </div>
+
+  <script src="/script.js"></script>
+</body>
+</html>
