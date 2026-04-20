@@ -1,0 +1,14 @@
+{
+  "name": "finnews-simple",
+  "version": "1.0.0",
+  "description": "Production-ready finance awareness website with multilingual summaries, glossary search, and chatbot support.",
+  "private": true,
+  "scripts": {
+    "dev": "node server.js",
+    "start": "node server.js",
+    "test": "node --test --test-isolation=none"
+  },
+  "engines": {
+    "node": ">=20"
+  }
+}

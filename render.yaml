@@ -1,0 +1,19 @@
+services:
+  - type: web
+    name: finnews-simple
+    runtime: node
+    plan: free
+    buildCommand: "echo No build step required"
+    startCommand: "node server.js"
+    healthCheckPath: /api/health
+    envVars:
+      - key: NODE_ENV
+        value: production
+      - key: LIVE_NEWS_ENABLED
+        value: "true"
+      - key: LIVE_NEWS_TIMEOUT_MS
+        value: "7000"
+      - key: LIVE_NEWS_CACHE_MS
+        value: "300000"
+      - key: GEMINI_MODEL
+        value: gemini-2.5-flash
